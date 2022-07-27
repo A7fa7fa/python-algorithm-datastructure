@@ -1,4 +1,3 @@
-from os import remove
 from node import Node
 
 class LinkedList():
