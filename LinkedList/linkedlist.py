@@ -142,6 +142,33 @@ class LinkedList():
 			self.tail = pre
 
 		return removedNode
+	
+	def prev(self, prev: Node, temp: Node):
+		if temp.next is not None:
+			self.prev(temp, temp.next)
+		
+		if temp.next is None:
+			self.head = temp
+		
+		temp.next = prev
+		return prev
+		
+		
+	def reverse(self):
+		if self.head is None:
+			return True
+		if self.head == self.tail:
+			return True
+
+		prev: Node = self.head
+		temp: Node = self.head
+		self.tail = self.prev(prev, temp)
+		self.tail.next = None
+		return True
+		
+
+		
+
 		
 
 

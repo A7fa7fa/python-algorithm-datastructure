@@ -3,9 +3,10 @@ from linkedlist import LinkedList
 def main():
 	myLinkedList = LinkedList()
 
-	myLinkedList.append(4)
+	for i in range(100):
+		myLinkedList.append(i)
 	myLinkedList.printList()
-	myLinkedList.remove(0)
+	myLinkedList.reverse()
 	print("----")
 	myLinkedList.printList()
 
