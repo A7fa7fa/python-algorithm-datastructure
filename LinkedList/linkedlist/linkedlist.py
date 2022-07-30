@@ -1,4 +1,4 @@
-from node import Node
+from linkedlist.node import Node
 
 class LinkedList():
 
@@ -144,24 +144,32 @@ class LinkedList():
 		return removedNode
 	
 	def prev(self, prev: Node, temp: Node):
+		# as long as end of list not reached recursive call this method again
 		if temp.next is not None:
 			self.prev(temp, temp.next)
 		
+		# if temp.next is None end of list is reached
+		# end of list becomes new head
 		if temp.next is None:
 			self.head = temp
 		
+		# previouse node becomes next node		
 		temp.next = prev
-		return prev
+		# return next node
+		return temp.next
 		
 		
 	def reverse(self):
+		# list is empty so no reversal needed
 		if self.head is None:
 			return True
+		# list has length of 1 so no reversal needed
 		if self.head == self.tail:
 			return True
 
 		prev: Node = self.head
 		temp: Node = self.head
+		# recurse 
 		self.tail = self.prev(prev, temp)
 		self.tail.next = None
 		return True

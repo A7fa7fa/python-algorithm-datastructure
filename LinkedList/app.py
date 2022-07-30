@@ -1,4 +1,4 @@
-from linkedlist import LinkedList
+from linkedlist.linkedlist import LinkedList
 
 def main():
 	myLinkedList = LinkedList()
